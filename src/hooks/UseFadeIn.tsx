@@ -5,7 +5,9 @@ export const UseFadeIn = (item:string ) => {
  const [render, setRender] = useState(item === "Factura");
   const [active, setActive] = useState<boolean>(false);
   const duration = 1000; // ms — cámbialo a 10000 si quieres 10s
-
+  const [logintab, setlogintab] = useState(false)
+  
+ 
  useEffect(() => {
     let t:any;
     if (item === "Factura") {
@@ -13,22 +15,28 @@ export const UseFadeIn = (item:string ) => {
       setRender(true);
       // dos requestAnimationFrame para asegurar que el browser registre el estado inicial
       requestAnimationFrame(() => requestAnimationFrame(() => setActive(true)));
+       requestAnimationFrame(() => requestAnimationFrame(() => setlogintab(true)));
     } else {
       // iniciar animación de salida
       setActive(false);
+     
       // esperar a que termine la animación para desmontar
       t = setTimeout(() => setRender(false), duration);
     }
     return () => clearTimeout(t);
   }, [item, duration]);
 
-
+ const logIn = () => {
+   setlogintab(!logintab);
+   console.log('working')
+    
+  }
 
   const durClass = `duration-[${duration}ms]`;
 
 
     return {
-       active,durClass,render
+       active,durClass,render,logintab,logIn,setlogintab
     }
       
    

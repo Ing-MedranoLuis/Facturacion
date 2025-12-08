@@ -6,10 +6,12 @@ import { Conducer } from "./Components/Conducer"
 import { LogIn } from "./LogIn"
 
 interface prop{
-  status: boolean,
+ 
   item: string,
   icons: string[],
-  buttons:string[]
+  buttons: string[],
+
+  
 }
 
 export const MainContent = ({  item, icons, buttons }: prop) => {
@@ -20,7 +22,7 @@ export const MainContent = ({  item, icons, buttons }: prop) => {
       case 'Factura': return <Factura buttons={buttons} item={item} icons={ icons} />
       case 'Productos': return <Items icons={icons} item={item} buttons={buttons} />
       case 'Conduce': return <Conducer icons={icons} item={item} buttons={buttons} />
-      case 'Log In':return <LogIn/>
+     
      }
    }
   return (
@@ -33,7 +35,7 @@ export const MainContent = ({  item, icons, buttons }: prop) => {
         {
           render()
         }
-        <LogIn />
+        <LogIn  />
             
           </div>
     </div>
