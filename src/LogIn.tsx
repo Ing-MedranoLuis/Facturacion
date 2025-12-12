@@ -29,7 +29,7 @@ export const LogIn = () => {
       <div
         className={`${
           !logintab ? "hidden" : ""
-        } bg-gradient-to-br from-blue-50 border absolute w-full h-full top-0 left-0 z-60`}
+        } bg-gradient-to-br from-blue-50  absolute w-full h-full top-0 left-0 z-59`}
       ></div>
 
       <div
