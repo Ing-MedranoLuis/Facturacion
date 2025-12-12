@@ -25,23 +25,22 @@ export const LogIn = () => {
   }
 
   return (
-    <div className="r">
+    <div className="">
       <div
         className={`${
           !logintab ? "hidden" : ""
-        } bg-gradient-to-br from-blue-50  absolute w-full h-full top-0 left-0 z-59`}
+        } bg-gradient-to-br from-blue-50  absolute w-full h-full top-0 left-0 z-58`}
       ></div>
 
       <div
-        className={`${
+        className={` z-70 ${
           logintab ? "opacity-100 translate-y-0 flex" : "opacity-0 translate-y-20"
-        }
-          transition-all ${durClass}
+        }  transition-all ${durClass}
           ease-in-out
           md:top-60 md:left-90
-         
+          absolute
           bg-white flex flex-col items-center p-10 shadow
-          w-[80%] md:w-[40%] z-60`}
+          w-[80%] md:w-[40%] `}
       >
         <form className="m-10 flex flex-col justify-around">
           <div className="my-2">
