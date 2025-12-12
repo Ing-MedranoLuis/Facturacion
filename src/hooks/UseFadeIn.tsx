@@ -1,4 +1,6 @@
 import  { useEffect, useState } from 'react'
+import { users } from '../data/Data';
+import type { Uprop } from '../LogIn';
 
 export const UseFadeIn = (item:string ) => {
 
@@ -6,6 +8,7 @@ export const UseFadeIn = (item:string ) => {
   const [active, setActive] = useState<boolean>(false);
   const duration = 1000; // ms — cámbialo a 10000 si quieres 10s
   const [logintab, setlogintab] = useState(false)
+  const [username, setusername] = useState<string>('invitado')
   
  
  useEffect(() => {
@@ -26,9 +29,19 @@ export const UseFadeIn = (item:string ) => {
     return () => clearTimeout(t);
   }, [item, duration]);
 
- const logIn = () => {
-   setlogintab(!logintab);
-   console.log('working')
+  const logIn = (user:Uprop) => {
+   
+    users.find((e) => {
+      console.log(e,user);
+      if (e.userName.toLocaleLowerCase() == user.userName.toLocaleLowerCase() && e.password == user.password) {
+        setusername(e.userName); setlogintab(!logintab);
+        return
+      } 
+       
+   
+   alert('failed')
+    })
+  
     
   }
 
@@ -36,7 +49,7 @@ export const UseFadeIn = (item:string ) => {
 
 
     return {
-       active,durClass,render,logintab,logIn,setlogintab
+       active,durClass,render,logintab,logIn,setlogintab,username
     }
       
    

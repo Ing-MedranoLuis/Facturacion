@@ -10,6 +10,14 @@ export interface Producto{
 // interface data{
 //     producto:Producto
 // }
+export const users = [
+    {
+        name: 'Luis',
+        userName: 'ing.luis',
+        password:'M3dr@n@@7232@@1'
+        
+    }
+]
 
 export const producto = [
     

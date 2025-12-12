@@ -13,7 +13,7 @@ interface prop{
    
 }
 export const SideHeader = ({ showComponet,buttons ,select,toggle,icons}: prop) => {
-  const {logIn }=   UseFadeIn('Factura')
+  const { username }=   UseFadeIn('Factura')
    
 
  
@@ -38,7 +38,7 @@ export const SideHeader = ({ showComponet,buttons ,select,toggle,icons}: prop) =
     <div className="h-full flex flex-col justify-around md:justify-between  items-center">
         <div className="flex flex-col items-center">
           <img className='rounded-xl p-2 m-2 w-[40%]' src="https://thumbs.dreamstime.com/b/profile-picture-caucasian-male-employee-posing-office-happy-young-worker-look-camera-workplace-headshot-portrait-smiling-190186649.jpg" alt="" />
-          <p className="font-mono text-blue-400">Hola, Alejandro!</p>
+          <p className="font-mono text-blue-400">Hola, {username}!</p>
       </div>
         <ul className="text-xl md:text-lg font-mono p-5 flex flex-col gap-2 w-full">
         {buttons.map((item, index) => (
@@ -60,7 +60,7 @@ export const SideHeader = ({ showComponet,buttons ,select,toggle,icons}: prop) =
         </ul>
         
         <ul>
-          <li onClick={logIn}  className="border py-2 px-15  sm:py-2 sm:px-30 md:px-20 transition ease-in-out text-blue-500 cursor-pointer hover:bg-blue-500 hover:text-white hover:scale-110"><i className="bi bi-door-open"> </i>Log In</li>
+       
         
  
         </ul>
