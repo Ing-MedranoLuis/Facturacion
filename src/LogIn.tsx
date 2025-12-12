@@ -39,9 +39,9 @@ export const LogIn = () => {
           transition-all ${durClass}
           ease-in-out
           md:top-60 md:left-90
-          top-[500px] absolute left-30
+         
           bg-white flex flex-col items-center p-10 shadow
-          w-[70%] md:w-[40%] z-60`}
+          w-[80%] md:w-[40%] z-60`}
       >
         <form className="m-10 flex flex-col justify-around">
           <div className="my-2">
